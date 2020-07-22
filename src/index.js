@@ -4,10 +4,11 @@ import './index.css';
 import App from './App';
 import 'bootstrap/dist/css/bootstrap.css';
 import * as serviceWorker from './serviceWorker';
+import Header from './Header';
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <Header />
   </React.StrictMode>,
   document.getElementById('root')
 );
