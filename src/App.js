@@ -8,6 +8,7 @@ import Registration from './Registration';
 import Finder from './Finder';
 import {BrowserRouter as Router, Switch, Route, Link} from "react-router-dom";
 
+
 function App() {
   return (
     <Router>
