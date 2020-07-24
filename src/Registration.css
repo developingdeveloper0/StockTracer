@@ -6,8 +6,22 @@
 	background: linear-gradient(to left, rgba(5, 184, 255,1) 0%, rgba(0,0,0,1) 100%);
 
 }
-
-.btn-dark {
-	position: center;
+button {
+	text-align: center;
 }
 
+.loginButton {
+	text-align: center;
+}
+
+.noAccount {
+	text-align: center;
+}
+
+.registerbtn {
+	color: #26eb29;
+	font-weight: 600;
+}
+.registerbtn:hover {
+	color: #1809e3;
+}
