@@ -1,11 +1,12 @@
 .login {
 	margin-top: 25px;
-	border: 1px solid black;
+	text-align:center;
 	padding: 35px;
 	color: white;
 	background: linear-gradient(to left, rgba(5, 184, 255,1) 0%, rgba(0,0,0,1) 100%);
 
 }
+
 button {
 	text-align: center;
 }
@@ -21,7 +22,12 @@ button {
 .registerbtn {
 	color: #26eb29;
 	font-weight: 600;
+
 }
 .registerbtn:hover {
 	color: #1809e3;
+	background-color: transparent;
+}
+Form.Label{
+	color: yellow;
 }
