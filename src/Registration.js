@@ -36,7 +36,7 @@ class Registration extends React.Component {
 					<div className="container">
 						<div className="login">
 						<Login />
-						<LoadRegisterButton changePage={this.handleRegisterClick} className="registerbtn"/> 
+						<LoadRegisterButton  changePage={this.handleRegisterClick} className="registerbtn"/> 
 						</div>
 						<Footer />
 				</div>
@@ -52,7 +52,7 @@ class Registration extends React.Component {
 				<div className="container">
 					<div className = "login">
 					<Register />
-					<LoadLoginButton changePage={this.handleLoginClick}/>
+					<LoadLoginButton  changePage={this.handleLoginClick}/>
 					</div>
 					<Footer />
 			</div>
@@ -64,11 +64,11 @@ class Registration extends React.Component {
 	}
 
 const LoadRegisterButton = props => {
-	return <Button onClick={props.changePage}>Register</Button>
+	return <a onClick={props.changePage} href="#" className="aLink">Register</a>
 }
 
 const LoadLoginButton = props => {
-	return <Button onClick={props.changePage}>Login</Button>
+	return <a onClick={props.changePage} href="#" className="aLink">Login</a>
 }
 	
 	

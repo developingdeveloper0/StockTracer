@@ -28,6 +28,12 @@ button {
 	color: #1809e3;
 	background-color: transparent;
 }
-Form.Label{
-	color: yellow;
+
+.aLink {
+	color: #08c43a;
+	font-weight: 750;
+}
+
+.aLink:hover {
+	color: #0a23c7;
 }
