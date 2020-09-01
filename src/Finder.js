@@ -5,7 +5,25 @@ import FormControl from 'react-bootstrap/FormControl';
 import InputGroup from 'react-bootstrap/InputGroup';
 import './Finder.css';
 var unirest = require('unirest');
+var req = unirest("GET", "https://apidojo-yahoo-finance-v1.p.rapidapi.com/stock/v2/get-summary");
 
+req.query({
+	"region": "US",
+	"symbol": "TSLA"
+});
+
+req.headers({
+	"x-rapidapi-host": "apidojo-yahoo-finance-v1.p.rapidapi.com",
+	"x-rapidapi-key": "c2e612e4b4mshdc0b42705d50512p115877jsn9f363acad0b8",
+	"useQueryString": true
+});
+
+
+req.end(function (res) {
+	if (res.error) throw new Error(res.error);
+
+	console.log(res.body.price.regularMarketPrice["raw"]);
+});
 
 const Finder = (props) => {
 	return (
