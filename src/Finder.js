@@ -1,4 +1,5 @@
 import React from 'react';
+import ReactDOM from 'react-dom';
 import Footer from './Footer';
 import Button from 'react-bootstrap/Button';
 import FormControl from 'react-bootstrap/FormControl';
@@ -6,15 +7,53 @@ import InputGroup from 'react-bootstrap/InputGroup';
 import './Finder.css';
 
 
-const Finder = (props) => {
-	var sym = "TSLA";
+class Finder extends React.Component {
+	constructor() {
+		super()
+		this.state = {
+			symbol: "TSLA"
+		}
+	}
+	// var sym = "TSLA";
 
+	// var unirest = require('unirest');
+	// var req = unirest("GET", "https://apidojo-yahoo-finance-v1.p.rapidapi.com/stock/v2/get-summary");
+
+	// req.query({
+	// 	"region": "US",
+	// 	"symbol": {this.state.symbol}
+	// });
+
+	// req.headers({
+	// 	"x-rapidapi-host": "apidojo-yahoo-finance-v1.p.rapidapi.com",
+	// 	"x-rapidapi-key": "c2e612e4b4mshdc0b42705d50512p115877jsn9f363acad0b8",
+	// 	"useQueryString": true
+	// });
+
+
+	// req.end(function (res) {
+	// 	if (res.error) throw new Error(res.error);
+
+	// 	console.log(res.body.price.regularMarketPrice["raw"]);
+	// });
+
+	searchSymbol = () => {
+		var sym = document.getElementById("search").value;
+		this.setState({
+			symbol: sym
+		})
+		console.log(this.state.symbol);
+	}
+	
+
+	render() {
+		
 	var unirest = require('unirest');
 	var req = unirest("GET", "https://apidojo-yahoo-finance-v1.p.rapidapi.com/stock/v2/get-summary");
 
 	req.query({
 		"region": "US",
-		"symbol": sym
+		"symbol": this.state.symbol
 	});
 
 	req.headers({
@@ -30,12 +69,7 @@ const Finder = (props) => {
 		console.log(res.body.price.regularMarketPrice["raw"]);
 	});
 
-	const searchSymbol = () => {
-		sym = document.getElementById("search").value;
-		console.log(sym);
-	}
-
-	return (
+		return(
 		<div className='container'>
 			<InputGroup className="mb-3">
 			    <FormControl
@@ -45,13 +79,13 @@ const Finder = (props) => {
 			      aria-describedby="basic-addon2"
 			    />
 			    <InputGroup.Append>
-			      <Button  onClick = {searchSymbol} variant="outline-secondary">Search</Button>
+			      <Button  onClick = {this.searchSymbol} variant="outline-secondary">Search</Button>
 			    </InputGroup.Append>
 			  </InputGroup>
 			<Footer />
 		</div>
-
-	)
+		);
+	}
 }
 
 export default Finder;
