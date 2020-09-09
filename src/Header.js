@@ -1,6 +1,5 @@
 import React from 'react';
 import './Header.css'
-import Navbar from 'react-bootstrap/Navbar';
 import {BrowserRouter as Router, Switch, Route, Link} from "react-router-dom";
 import Finder from './Finder';
 import Registration from './Registration';
@@ -17,13 +16,13 @@ const Header = (props) => {
   			<div className="collapse navbar-collapse" id="navbarNav">
     			<ul className="navbar-nav">
       				<li className="nav-item active">
-        				<Link to="/"><a className="nav-link" href="#">Home<span className="sr-only">(current)</span></a></Link>
+        				<Link to="/" className="nav-link">Home<span className="sr-only">(current)</span></Link>
       				</li>
       				<li className="nav-item">
-        				<Link to="/finder"><a className="nav-link" href="#">Stock Finder</a></Link>
+        				<Link to="/finder" className="nav-link">Stock Finder</Link>
       				</li>
       				<li className="nav-item">
-       					<Link to="/registration"><a className="nav-link" href="#">Login/Register</a></Link>
+       					<Link to="/registration" className="nav-link">Login/Register</Link>
       				</li>
     			</ul>
   			</div>
