@@ -19,6 +19,9 @@ class Finder extends React.Component {
 		this.setState({
 			symbol: sym
 		})
+		// var results = document.getElementById("results");
+		// results.innerHTML += this.state.symbol;
+
 		console.log(this.state.symbol);
 	}
 	
@@ -42,7 +45,8 @@ class Finder extends React.Component {
 
 	req.end(function (res) {
 		if (res.error) throw new Error(res.error);
-
+		var results = document.getElementById("results");
+		results.innerHTML += res.body.price.regularMarketPrice["raw"];
 		console.log(res.body.price.regularMarketPrice["raw"]);
 	});
 
@@ -59,6 +63,7 @@ class Finder extends React.Component {
 			      <Button  onClick = {this.searchSymbol} variant="outline-secondary">Search</Button>
 			    </InputGroup.Append>
 			  </InputGroup>
+			  <p id = "results"> </p>
 			<Footer />
 		</div>
 		);
