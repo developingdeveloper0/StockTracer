@@ -46,8 +46,9 @@ class Finder extends React.Component {
 	req.end(function (res) {
 		if (res.error) throw new Error(res.error);
 		var results = document.getElementById("results");
+		var sym = document.getElementById("search").value;
 		//var state = req.query.symbol;
-		results.innerHTML = res.body.price.regularMarketPrice["raw"];
+		results.innerHTML = sym + " " + res.body.price.regularMarketPrice["raw"];
 		console.log(res.body.price.regularMarketPrice["raw"]);
 	});
 
